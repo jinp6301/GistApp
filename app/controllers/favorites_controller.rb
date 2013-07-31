@@ -7,8 +7,9 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new(params[:favorite])
+    @favorite = Favorite.new()
     @favorite.user_id = current_user.id
+    @favorite.gist_id = params[:gist_id]
 
     if @favorite.save
       render json: @favorite

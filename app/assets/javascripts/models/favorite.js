@@ -1,5 +1,5 @@
 GA.Models.Favorite = Backbone.Model.extend({
-  initialize: function(id){
+  initialize: function(id, options){
     this.url = "gists/" + id + "/favorites"
   }
 })

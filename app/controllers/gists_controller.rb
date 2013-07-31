@@ -27,11 +27,7 @@ class GistsController < ApplicationController
   def update
     @gist = Gist.find(params[:id])
     if @gist.save
-      if @gist.fav
-        create nested favorite
-      else
-        destroy nested favorite
-      end
+      render json: @gist
     else
       render json: { error: "invalid url" }, status: :unprocessable_entity
     end
