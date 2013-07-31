@@ -1,0 +1,13 @@
+<h2> Show Page Root Main </h2>
+
+<div class="starter"></div>
+
+<script type="application/json" id="booted_gists">
+  <%= @gists.to_json.html_safe %>
+</script>
+
+<script>
+$(document).ready(function(){
+  GA.initialize($('.starter'), $('#booted_gists').html());
+});
+</script>
