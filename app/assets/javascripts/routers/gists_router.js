@@ -6,12 +6,20 @@ GA.Routers.Gists = Backbone.Router.extend({
   },
 
   routes: {
-    "": "root"
+    "": "root",
+    "gists/new": "create"
   },
 
-  root: function($rootEl, gists){
+  root: function(){
     var that = this;
     var view = new GA.Views.GistsIndex({collection: that.gists});
     that.$rootEl.html(view.render().el)
+  },
+
+  create: function(){
+    var that = this;
+    var view = new GA.Views.GistForm({collection: that.gists});
+    that.$rootEl.html(view.render().el)
   }
+
 })

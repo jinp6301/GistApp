@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   attr_accessible :password, :username
   attr_reader :password
 
-  has_many :gists
+  has_many :gists, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :username, :password_digest, :presence => true
   validates :password, :length => { :minimum => 3 }

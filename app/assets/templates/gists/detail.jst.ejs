@@ -1,2 +1,12 @@
 
 Title: <%= model.escape('title') %>
+
+<% if (model.escape('fav') === "true"){ %>
+
+  <span>Fav'd!</span>
+  <button class="unfavorite" data-id="<%= model.id %>">Unfavorite</button>
+<% } else { %>
+  <button class="favorite" data-id="<%= model.id %>">Favorite</button>
+<% } %>
+
+
