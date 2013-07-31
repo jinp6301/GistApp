@@ -1,5 +1,5 @@
 
-Title: <%= model.escape('title') %>
+GisTitle: <%= model.escape('title') %>
 
 <% if (model.escape('fav') === "true"){ %>
 
@@ -8,5 +8,7 @@ Title: <%= model.escape('title') %>
 <% } else { %>
   <button class="favorite" data-id="<%= model.id %>">Favorite</button>
 <% } %>
+
+<a href="#gists/<%= model.id %>/edit">Edit</a>
 
 

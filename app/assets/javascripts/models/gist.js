@@ -9,12 +9,11 @@ GA.Models.Gist = Backbone.Model.extend({
 
     var fav = new GA.Models.Favorite(this.id)
     fav.fetch({
-      success: function(){
-        response.favorite = fav;
+      success: function(data){
+        if (data){
+          response.favorite = fav;
+        }
       },
-      error: function(){
-        fav.destroy()
-      }
     })
 
     return response;

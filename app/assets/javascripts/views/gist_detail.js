@@ -19,7 +19,7 @@ GA.Views.GistDetail = Backbone.View.extend({
   favorite: function(event){
     var that = this;
     this.model.set({fav: true})
-    // that.model.save()
+    that.model.save()
 
   },
 

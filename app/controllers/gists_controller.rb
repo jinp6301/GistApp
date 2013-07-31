@@ -24,6 +24,19 @@ class GistsController < ApplicationController
     render json: @gist
   end
 
+  def update
+    @gist = Gist.find(params[:id])
+    if @gist.save
+      if @gist.fav
+        create nested favorite
+      else
+        destroy nested favorite
+      end
+    else
+      render json: { error: "invalid url" }, status: :unprocessable_entity
+    end
+  end
+
   # def as_json(options={})
   #   bool = current_user.gists
   #   super(options.merge(include: bool))

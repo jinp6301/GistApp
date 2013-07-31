@@ -1,4 +1,5 @@
 <form>
-  Title: <input type='text' name='gist[title]'>
+  Title: <input type='text' name='gist[title]' value="<%= model.escape("title")%>">
   <input type="submit" value="Create new Gist">
 </form>
+
